@@ -15,19 +15,24 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 667);
-    return Scaffold(
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+        child:  Scaffold(
 //        appBar: AppBar(
 //          title: Text('appbarTitle'),
 //        ),
-        body: ListView(
-          children: <Widget>[
-            _topLogoWidget(),
-            _centerVideoWidget(),
-            _loginButtonWidget(context),
-            SizedBox(height: 20,),
-            _getStartedButtonWidget(context)
-          ],
-        )
+            body: ListView(
+              children: <Widget>[
+                _topLogoWidget(),
+                _centerVideoWidget(),
+                _loginButtonWidget(context),
+                SizedBox(height: 20,),
+                _getStartedButtonWidget(context)
+              ],
+            )
+        ),
+        value: SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.light
+        ),
     );
   }
 

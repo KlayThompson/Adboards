@@ -29,6 +29,7 @@ class ExpertiseLevelPage extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           leading: _appbarLeadingWidget(context),
+          brightness: Brightness.light,
         ),
         body: ListView(
           children: <Widget>[

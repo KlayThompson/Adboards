@@ -18,7 +18,6 @@ void main() {
         child: MyApp(),
       )
   );
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 }
 
 class MyApp extends StatelessWidget {
