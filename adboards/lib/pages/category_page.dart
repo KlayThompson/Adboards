@@ -3,6 +3,7 @@ import 'package:adboards/widget/appbar_leading_widget.dart';
 import 'package:adboards/widget/avatar_widget.dart';
 import 'package:adboards/widget/indexes_widget.dart';
 import 'package:adboards/widget/main_button_widget.dart';
+import 'package:adboards/widget/searchbar_widget.dart';
 import 'package:adboards/widget/top_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,6 @@ import 'package:provider/provider.dart';
 import 'package:adboards/provider/category_provider.dart';
 
 class CategoryPage extends StatelessWidget {
-  final String questionAsset = 'resources/img/question.png';
   final String checkMarkAsset = 'resources/img/check_mark.png';
   final String forwardAsset = 'resources/img/arrow_forward.png';
 
@@ -41,7 +41,7 @@ class CategoryPage extends StatelessWidget {
                             desc:
                                 'We need some information about your business. Start by selecting your business category. You can select more than one category. ',
                           ),
-                          _searchBarWidget(),
+                          SearchBarWidget(),
                           _categoryListWidget(context, provider.categories)
                         ],
                       )),
@@ -60,55 +60,6 @@ class CategoryPage extends StatelessWidget {
             );
           },
         ));
-  }
-
-  Widget _searchBarWidget() {
-    return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: [Color.fromARGB(1, 250, 250, 250), Colors.white],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter),
-      ),
-      child: Container(
-        height: ScreenUtil().setHeight(36),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Color.fromRGBO(118, 118, 128, 0.12)),
-        child: _inputTextFieldWidget(),
-      ),
-    );
-  }
-
-  Widget _inputTextFieldWidget() {
-    return Container(
-      padding: EdgeInsets.only(left: 5, right: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-              child: TextField(
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(vertical: 0),
-                icon: Image.asset(
-                  questionAsset,
-                  width: ScreenUtil().setWidth(22),
-                ),
-                hintText: 'Search Categories',
-                border: OutlineInputBorder(borderSide: BorderSide.none)),
-          )),
-          SizedBox(
-            width: 8,
-          ),
-          Image.asset(
-            questionAsset,
-            width: ScreenUtil().setWidth(22),
-          )
-        ],
-      ),
-    );
   }
 
   Widget _categoryListWidget(BuildContext context, List<Map> categories) {
