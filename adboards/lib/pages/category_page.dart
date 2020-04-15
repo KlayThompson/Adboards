@@ -91,6 +91,7 @@ class CategoryPage extends StatelessWidget {
           Expanded(
               child: TextField(
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(vertical: 0),
                 icon: Image.asset(
                   questionAsset,
                   width: ScreenUtil().setWidth(22),

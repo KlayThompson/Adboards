@@ -12,6 +12,7 @@ class Routes {
   static String campaignsNone = '/campaignsNone';
   static String category = '/category'; // 分类
   static String form = '/form'; // form
+  static String choose = '/choose'; // choose template
 
 
   static String webView = '/webView'; // 网页加载
@@ -30,6 +31,7 @@ class Routes {
     router.define(campaignsNone, handler: campaignsNoneHandler);
     router.define(category, handler: categoryHandler);
     router.define(form, handler: formHandler);
+    router.define(choose, handler: chooseHandler);
 
 //    router.define(webView, handler: webViewHandler); // 网页加载
 //    router.define(wxSharePay, handler: wxSharePayHandler); // 测试model传参
