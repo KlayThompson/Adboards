@@ -9,7 +9,11 @@ class Routes {
 
   static String root = '/'; // 根目录
   static String expertiseLevel = '/level'; // 设置页
-  static String campaignsNone = '/campaignsNone'; // 设置页
+  static String campaignsNone = '/campaignsNone';
+  static String category = '/category'; // 分类
+  static String form = '/form'; // form
+
+
   static String webView = '/webView'; // 网页加载
   static String wxSharePay = '/wxSharePay'; // 测试model传参
 
@@ -24,6 +28,9 @@ class Routes {
     router.define(root, handler: rootHandler); // 根目录
     router.define(expertiseLevel, handler: expertiseLevelHandler); // 专业水平
     router.define(campaignsNone, handler: campaignsNoneHandler);
+    router.define(category, handler: categoryHandler);
+    router.define(form, handler: formHandler);
+
 //    router.define(webView, handler: webViewHandler); // 网页加载
 //    router.define(wxSharePay, handler: wxSharePayHandler); // 测试model传参
   }

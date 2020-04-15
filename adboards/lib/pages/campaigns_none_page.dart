@@ -1,3 +1,5 @@
+import 'package:adboards/routes/routes.dart';
+import 'package:adboards/widget/avatar_widget.dart';
 import 'package:adboards/widget/main_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignsNonePage extends StatelessWidget {
 
-  final String avatarAsset = 'resources/img/avatar.png';
   final String bgImgAsset = 'resources/img/undraw_winter_magic_5xu2.png';
   final String addAsset = 'resources/img/add.png';
 
@@ -20,7 +21,7 @@ class CampaignsNonePage extends StatelessWidget {
           backgroundColor: Colors.white,
           brightness: Brightness.light,
           actions: <Widget>[
-            _avatarButtonWidget()
+            AvatarWidget()
           ],
         ),
         body: ListView(
@@ -52,18 +53,6 @@ class CampaignsNonePage extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-
-  Widget _avatarButtonWidget() {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.only(right: 20),
-        child: CircleAvatar(
-          child: Image.asset(avatarAsset,height: 45,),
-        ),
-      ),
     );
   }
   
@@ -110,7 +99,9 @@ class CampaignsNonePage extends StatelessWidget {
 
   Widget _createCampaignsButtonWidget(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Routes.navigateTo(context, Routes.category);
+      },
       child: MainButtonWidget(icon: addAsset,title: 'Create a Campaign'),
     );
   }

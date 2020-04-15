@@ -1,4 +1,5 @@
 import 'package:adboards/pages/login_page.dart';
+import 'package:adboards/provider/category_provider.dart';
 import 'package:adboards/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
@@ -7,13 +8,15 @@ import 'package:provider/provider.dart';
 import 'package:adboards/routes/routes.dart';
 void main() {
   var userProvider = UserProvider();
+  var categoryProvider = CategoryProvider();
   final router = Router();
   Routes.configureRoutes(router);
   Routes.router = router;
   runApp(
       MultiProvider(
         providers: [
-          ChangeNotifierProvider.value(value: userProvider)
+          ChangeNotifierProvider.value(value: userProvider),
+          ChangeNotifierProvider.value(value: categoryProvider)
         ],
         child: MyApp(),
       )

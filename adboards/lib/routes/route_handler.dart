@@ -1,4 +1,6 @@
+import 'package:adboards/pages/campaigns_form_page.dart';
 import 'package:adboards/pages/campaigns_none_page.dart';
+import 'package:adboards/pages/category_page.dart';
 import 'package:adboards/pages/expertise_level_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,14 @@ Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
 //create campaigns
 var campaignsNoneHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
   return CampaignsNonePage();
+});
+
+var categoryHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
+  return CategoryPage();
+});
+
+var formHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
+  return CampaignsFormPage();
 });
 
 // 网页加载 - 示例：传多个字符串参数

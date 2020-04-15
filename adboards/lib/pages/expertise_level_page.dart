@@ -1,11 +1,12 @@
 import 'package:adboards/routes/routes.dart';
+import 'package:adboards/widget/appbar_leading_widget.dart';
+import 'package:adboards/widget/top_text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExpertiseLevelPage extends StatelessWidget {
-  final String backAsset = 'resources/img/arrow_back_ios.png';
   final List<Map> levels = [
     {
       'icon': 'resources/img/leaves.png',
@@ -28,67 +29,15 @@ class ExpertiseLevelPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
-          leading: _appbarLeadingWidget(context),
+          leading: AppbarLeadingWidget(),
           brightness: Brightness.light,
         ),
         body: ListView(
           children: <Widget>[
-            _topHeaderWidget(),
+            TopTextWidget(title: 'Hey,', desc: 'Welcome to Adwards, It’s gonna be easy to grow your business using our interconnected billboards. Choose your expertise to begin. ',),
             _cardList(context)
           ],
         )
-    );
-  }
-
-  //app bar back button
-  Widget _appbarLeadingWidget(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).pop();
-      },
-      child: Container(
-//      color: Colors.deepPurple,
-        padding: EdgeInsets.only(top: 15, bottom: 15),
-        width: 24,
-        height: 24,
-        child: Image.asset(
-          backAsset,
-          color: Color(0xff323643),
-        ),
-      ),
-    );
-  }
-
-  Widget _topHeaderWidget() {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.white, Color.fromARGB(1, 250, 250, 250)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter)),
-      padding: EdgeInsets.fromLTRB(17, 10, 17, 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            'Hey,',
-            style: TextStyle(
-                fontSize: ScreenUtil().setSp(28),
-                fontWeight: FontWeight.bold,
-                color: Color(0xff323643)),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'Welcome to Adwards, It’s gonna be easy to grow your business using our interconnected billboards. Choose your expertise to begin. ',
-            style: TextStyle(
-                fontSize: ScreenUtil().setSp(16),
-                color: Color.fromRGBO(68, 68, 68, 0.6),
-                height: 1.5),
-          )
-        ],
-      ),
     );
   }
 

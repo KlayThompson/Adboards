@@ -55,6 +55,8 @@ flutter:
     - resources/img/avatar.png
     - resources/img/undraw_winter_magic_5xu2.png
     - resources/img/add.png
+    - resources/img/question.png
+    - resources/img/check_mark.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
