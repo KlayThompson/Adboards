@@ -1,5 +1,6 @@
 import 'package:adboards/pages/login_page.dart';
 import 'package:adboards/provider/category_provider.dart';
+import 'package:adboards/provider/template_details_provider.dart';
 import 'package:adboards/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
@@ -9,6 +10,7 @@ import 'package:adboards/routes/routes.dart';
 void main() {
   var userProvider = UserProvider();
   var categoryProvider = CategoryProvider();
+  var templateDetailProvider = TemplateDetailsProvider();
   final router = Router();
   Routes.configureRoutes(router);
   Routes.router = router;
@@ -16,7 +18,8 @@ void main() {
       MultiProvider(
         providers: [
           ChangeNotifierProvider.value(value: userProvider),
-          ChangeNotifierProvider.value(value: categoryProvider)
+          ChangeNotifierProvider.value(value: categoryProvider),
+          ChangeNotifierProvider.value(value: templateDetailProvider)
         ],
         child: MyApp(),
       )

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppbarLeadingWidget extends StatelessWidget {
   final String backAsset = 'resources/img/arrow_back_ios.png';
+  final bool isWhite;
+  AppbarLeadingWidget({this.isWhite = false});
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -15,7 +17,7 @@ class AppbarLeadingWidget extends StatelessWidget {
         height: 24,
         child: Image.asset(
           backAsset,
-          color: Color(0xff323643),
+          color: this.isWhite ? Colors.white : Color(0xff323643),
         ),
       ),
     );

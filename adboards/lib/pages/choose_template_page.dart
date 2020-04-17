@@ -1,3 +1,4 @@
+import 'package:adboards/routes/routes.dart';
 import 'package:adboards/widget/appbar_leading_widget.dart';
 import 'package:adboards/widget/ar_icon_widget.dart';
 import 'package:adboards/widget/avatar_widget.dart';
@@ -29,26 +30,31 @@ class ChooseTemplatePage extends StatelessWidget {
                 'This ad templates are specifically tailored for you. Start with one and then customize it. Oh! we placed the company logo, name & tagline for you.  ',
               ),
               SearchBarWidget(),
-              _cardWidget('Got Fashion', 'Sutiable for fashion ads ', bigImg1Asset),
-              _cardWidget('Promos', 'Suitable for promotion and campaign ', bigImg2Asset)
+              _cardWidget(context,'Got Fashion', 'Sutiable for fashion ads ', bigImg1Asset),
+              _cardWidget(context,'Promos', 'Suitable for promotion and campaign ', bigImg2Asset)
             ],
           ),
         )
     );
   }
 
-  Widget _cardWidget(String title, String desc, String imgAsset) {
-    return Container(
-      height: ScreenUtil().setHeight(292),
-      padding: EdgeInsets.fromLTRB(16, 19, 16, 24),
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          _bigImgWidget(imgAsset),
-          _bottomWidget(title, desc)
-        ],
+  Widget _cardWidget(BuildContext context,String title, String desc, String imgAsset) {
+    return InkWell(
+      onTap: () {
+        Routes.navigateTo(context, Routes.details);
+      },
+      child: Container(
+        height: ScreenUtil().setHeight(292),
+        padding: EdgeInsets.fromLTRB(16, 19, 16, 24),
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            _bigImgWidget(imgAsset),
+            _bottomWidget(title, desc)
+          ],
+        ),
       ),
     );
   }

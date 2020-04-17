@@ -3,6 +3,7 @@ import 'package:adboards/pages/campaigns_none_page.dart';
 import 'package:adboards/pages/category_page.dart';
 import 'package:adboards/pages/choose_template_page.dart';
 import 'package:adboards/pages/expertise_level_page.dart';
+import 'package:adboards/pages/template_details_page.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:adboards/pages/login_page.dart';
@@ -35,6 +36,10 @@ var formHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynami
 
 var chooseHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
   return ChooseTemplatePage();
+});
+
+var detailsHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
+  return TemplateDetailsPage();
 });
 
 // 网页加载 - 示例：传多个字符串参数

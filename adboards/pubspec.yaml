@@ -60,6 +60,11 @@ flutter:
     - resources/img/ar_glyph.png
     - resources/img/bigImg1.png
     - resources/img/bigImg2.png
+    - resources/img/top_img1.png
+    - resources/img/template_detail_img1.png
+    - resources/img/template_detail_img2.png
+    - resources/img/template_detail_img3.png
+    - resources/img/template_detail_img4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
