@@ -1,5 +1,7 @@
+import 'package:adboards/routes/routes.dart';
 import 'package:adboards/widget/ar_icon_widget.dart';
 import 'package:adboards/widget/custom_appbar_widget.dart';
+import 'package:adboards/widget/main_button_widget.dart';
 import 'package:adboards/widget/tag_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +10,7 @@ import 'package:adboards/provider/template_details_provider.dart';
 
 class TemplateDetailsPage extends StatelessWidget {
   final String topImgAsset = 'resources/img/top_img1.png';
+  final String forwardAsset = 'resources/img/arrow_forward.png';
 
   @override
   Widget build(BuildContext context) {
@@ -65,12 +68,8 @@ class TemplateDetailsPage extends StatelessWidget {
             ],
           ),
         ),
-//        SizedBox(height: 100,),
-        Container(
-          height: 1600,
-          color: Colors.deepPurpleAccent,
-          child: Center(child: Text('text'),),
-        )
+        _imgWrapWidget(),
+        _nextButtonWidget(context)
       ],
     );
   }
@@ -96,7 +95,7 @@ class TemplateDetailsPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Got Fashion',style: TextStyle(fontSize: ScreenUtil().setSp(20), color: Color(0xff444444)),),
+          Text('Got Fashion',style: TextStyle(fontSize: ScreenUtil().setSp(20), color: Color(0xff444444),fontWeight: FontWeight.bold),),
           _tagsWidget(),
           Text(
               'Suitable for fashion. If your onto fashion business and want to show how great your products are this template will help you Just to do that. It also includes a minigame when your customers are waiting in traffic to increase ad engagement.',
@@ -134,6 +133,62 @@ class TemplateDetailsPage extends StatelessWidget {
           SizedBox(width: 6,),
           TagWidget(title: 'Promo'),
         ],
+      ),
+    );
+  }
+
+  Widget _imgWrapWidget() {
+    List<String> images = ['resources/img/template_detail_img1.png','resources/img/template_detail_img2.png','resources/img/template_detail_img3.png','resources/img/template_detail_img4.png'];
+    int index = 0;
+    List<Widget> imagesWidget = images.map((image) {
+      double itemWidth = 0;
+      switch (index){
+        case 0:
+          itemWidth = ScreenUtil().setWidth(200);
+          break;
+        case 1:
+          itemWidth = ScreenUtil().setWidth(127);
+          break;
+        case 2:
+          itemWidth = ScreenUtil().setWidth(163);
+          break;
+        case 3:
+          itemWidth = ScreenUtil().setWidth(163);
+          break;
+        default:
+          break;
+      }
+      Widget child = Image.asset(image,fit: BoxFit.fill,width: itemWidth,);
+      index++;
+      return child;
+
+    }).toList();
+    return Container(
+      padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+      child: Wrap(
+//        alignment: WrapAlignment.spaceBetween,
+        spacing: 16,
+        runSpacing: 16,
+        children: imagesWidget,
+      ),
+    );
+  }
+
+  Widget _nextButtonWidget(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: 20),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.white, Color.fromARGB(1, 250, 250, 250)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter
+          )
+      ),
+      child: InkWell(
+        onTap: () {
+          Routes.navigateTo(context, Routes.editor);
+        },
+        child: MainButtonWidget(icon: forwardAsset, title: 'Use'),
       ),
     );
   }
