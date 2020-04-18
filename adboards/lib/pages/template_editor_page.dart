@@ -1,3 +1,4 @@
+import 'package:adboards/routes/routes.dart';
 import 'package:adboards/widget/appbar_leading_widget.dart';
 import 'package:adboards/widget/small_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class TemplateEditorPage extends StatelessWidget {
           leading: AppbarLeadingWidget(),
           brightness: Brightness.light,
           actions: <Widget>[
-            _doneButtonWidget()
+            _doneButtonWidget(context)
           ],
         ),
         body: Column(
@@ -32,9 +33,11 @@ class TemplateEditorPage extends StatelessWidget {
     );
   }
 
-  Widget _doneButtonWidget() {
+  Widget _doneButtonWidget(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Routes.navigateTo(context, Routes.select);
+      },
       child: Container(
         width: 71,
         margin: EdgeInsets.only(top: 14,bottom: 14,right: 15),

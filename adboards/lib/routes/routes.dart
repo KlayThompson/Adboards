@@ -15,6 +15,7 @@ class Routes {
   static String choose = '/choose'; // choose template
   static String details = '/details'; // choose template
   static String editor = '/editor'; // template editor
+  static String select = '/select'; // template editor
 
 
 
@@ -37,6 +38,7 @@ class Routes {
     router.define(choose, handler: chooseHandler);
     router.define(details, handler: detailsHandler);
     router.define(editor, handler: editorHandler);
+    router.define(select, handler: selectHandler);
 
 //    router.define(webView, handler: webViewHandler); // 网页加载
 //    router.define(wxSharePay, handler: wxSharePayHandler); // 测试model传参

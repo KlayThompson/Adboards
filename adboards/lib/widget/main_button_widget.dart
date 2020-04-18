@@ -6,12 +6,13 @@ class MainButtonWidget extends StatelessWidget {
   final String icon;
   final String title;
   final bool isShort;
+  final bool rightZero;
   final colors = [Color(0xff0AC4BA),Color(0xff2BDA8E)];
-  MainButtonWidget({this.isWhite=false,this.icon,this.title,this.isShort=false});
+  MainButtonWidget({this.isWhite=false,this.icon,this.title,this.isShort=false,this.rightZero=false});
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+      padding: EdgeInsets.fromLTRB(20, 0, rightZero ? 0 : 20, 0),
       child: Container(
         width: this.isShort ? ScreenUtil().setWidth(335) : ScreenUtil().setWidth(148),
         height: ScreenUtil().setHeight(48),

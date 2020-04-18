@@ -69,6 +69,7 @@ flutter:
     - resources/img/faceid.png
     - resources/img/ar_big.png
     - resources/img/ar_big_icon.png
+    - resources/img/eye.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
