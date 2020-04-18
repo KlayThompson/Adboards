@@ -2,6 +2,7 @@ import 'package:adboards/routes/routes.dart';
 import 'package:adboards/widget/appbar_leading_widget.dart';
 import 'package:adboards/widget/ar_icon_widget.dart';
 import 'package:adboards/widget/avatar_widget.dart';
+import 'package:adboards/widget/small_button_widget.dart';
 import 'package:adboards/widget/top_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:adboards/widget/searchbar_widget.dart';
@@ -108,15 +109,7 @@ class ChooseTemplatePage extends StatelessWidget {
           ),
           InkWell(
             onTap: () {},
-            child: Container(
-              width: 71,
-              height: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                gradient: LinearGradient(colors: [Color(0xff0AC4BA),Color(0xff2BDA8E)])
-              ),
-              child: Center(child: Text('Use', style: TextStyle(color: Colors.white,fontSize: 13),),),
-            ),
+            child: SmallButtonWidget(title: 'Use'),
           )
         ],
       ),
