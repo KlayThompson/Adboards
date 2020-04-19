@@ -2,7 +2,9 @@ import 'package:adboards/pages/campaigns_form_page.dart';
 import 'package:adboards/pages/campaigns_none_page.dart';
 import 'package:adboards/pages/category_page.dart';
 import 'package:adboards/pages/choose_template_page.dart';
+import 'package:adboards/pages/done_page.dart';
 import 'package:adboards/pages/expertise_level_page.dart';
+import 'package:adboards/pages/home_page.dart';
 import 'package:adboards/pages/template_details_page.dart';
 import 'package:adboards/pages/template_editor_page.dart';
 import 'package:adboards/pages/template_select_page.dart';
@@ -50,6 +52,14 @@ var editorHandler = Handler(handlerFunc: (BuildContext context, Map<String, dyna
 
 var selectHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
   return TemplateSelectPage();
+});
+
+var doneHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
+  return DonePage();
+});
+
+var homeHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic>params) {
+  return HomePage();
 });
 
 // 网页加载 - 示例：传多个字符串参数

@@ -1,3 +1,4 @@
+import 'package:adboards/routes/routes.dart';
 import 'package:adboards/widget/appbar_leading_widget.dart';
 import 'package:adboards/widget/avatar_widget.dart';
 import 'package:adboards/widget/main_button_widget.dart';
@@ -39,7 +40,7 @@ class _TemplateSelectPageState extends State<TemplateSelectPage> {
             _tagSelectWidget(),
             _numNameWidget(),
             _timeFrameWidget(),
-            _bottomWidget()
+            _bottomWidget(context)
           ],
         )
     );
@@ -216,7 +217,7 @@ class _TemplateSelectPageState extends State<TemplateSelectPage> {
     );
   }
 
-  Widget _bottomWidget() {
+  Widget _bottomWidget(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15),
       child: Row(
@@ -239,7 +240,12 @@ class _TemplateSelectPageState extends State<TemplateSelectPage> {
               )
           ),
           Expanded(
-              child: MainButtonWidget(icon: '',title: '\$3.55',isShort: true,rightZero: true,)
+              child: InkWell(
+                onTap: () {
+                  Routes.navigateTo(context, Routes.done);
+                },
+                child: MainButtonWidget(icon: '',title: '\$3.55',isShort: true,rightZero: true,),
+              )
           )
         ],
       ),

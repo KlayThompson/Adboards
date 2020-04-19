@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppbarLeadingWidget extends StatelessWidget {
   final String backAsset = 'resources/img/arrow_back_ios.png';
+  final String closeAsset = 'resources/img/close.png';
+
   final bool isWhite;
-  AppbarLeadingWidget({this.isWhite = false});
+  final bool isClose;
+  AppbarLeadingWidget({this.isWhite = false,this.isClose=false});
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -16,7 +19,7 @@ class AppbarLeadingWidget extends StatelessWidget {
         width: 24,
         height: 24,
         child: Image.asset(
-          backAsset,
+          isClose ? closeAsset : backAsset,
           color: this.isWhite ? Colors.white : Color(0xff323643),
         ),
       ),

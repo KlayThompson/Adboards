@@ -70,6 +70,9 @@ flutter:
     - resources/img/ar_big.png
     - resources/img/ar_big_icon.png
     - resources/img/eye.png
+    - resources/img/close.png
+    - resources/img/done_big.png
+    - resources/img/home.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

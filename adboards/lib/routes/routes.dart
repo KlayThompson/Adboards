@@ -16,6 +16,8 @@ class Routes {
   static String details = '/details'; // choose template
   static String editor = '/editor'; // template editor
   static String select = '/select'; // template editor
+  static String done = '/done'; // done page
+  static String home = '/home'; //home page
 
 
 
@@ -39,6 +41,9 @@ class Routes {
     router.define(details, handler: detailsHandler);
     router.define(editor, handler: editorHandler);
     router.define(select, handler: selectHandler);
+    router.define(done, handler: doneHandler);
+    router.define(home, handler: homeHandler);
+
 
 //    router.define(webView, handler: webViewHandler); // 网页加载
 //    router.define(wxSharePay, handler: wxSharePayHandler); // 测试model传参
