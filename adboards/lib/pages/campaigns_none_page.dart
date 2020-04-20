@@ -1,4 +1,5 @@
 import 'package:adboards/routes/routes.dart';
+import 'package:adboards/widget/appbar_text_leading_widget.dart';
 import 'package:adboards/widget/avatar_widget.dart';
 import 'package:adboards/widget/main_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,8 @@ class CampaignsNonePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: _leadingWidget(),
-          centerTitle: true,
+          title: AppBarTextLeadingWidget(title: 'Campaigns'),
+          centerTitle: false,
           elevation: 0,
           backgroundColor: Colors.white,
           brightness: Brightness.light,
@@ -31,28 +32,6 @@ class CampaignsNonePage extends StatelessWidget {
             _createCampaignsButtonWidget(context)
           ],
         )
-    );
-  }
-  
-  Widget _leadingWidget() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            Text(
-              'Campaigns',
-              style: TextStyle(
-                  fontSize: ScreenUtil().setSp(26),
-                  color: Color(0xff444444)
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            )
-          ],
-        ),
-      ],
     );
   }
   
