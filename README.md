@@ -2,7 +2,7 @@
 flutter train project
 
 ## UI
-
+![Image text](https://github.com/KlayThompson/Adboards/blob/master/ScreenShot/ui.png)
 ## ScreenShot
 ![Image text](https://github.com/KlayThompson/Adboards/blob/master/ScreenShot/main.gif)
 
